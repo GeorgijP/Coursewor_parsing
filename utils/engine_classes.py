@@ -15,9 +15,14 @@ class Engine(ABC):
 
 class HH(Engine):
     def get_request(self):
-        pass
+        self.request = requests.get("https://api.hh.ru/vacancies", par).json()
+        return self.request
 
 
 class Superjob(Engine):
     def get_request(self):
         pass
+
+
+hh = HH()
+print(hh.get_request())

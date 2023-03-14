@@ -15,7 +15,7 @@ class Engine(ABC):
 
 class HH(Engine):
     def get_request(self):
-        self.request = requests.get("https://api.hh.ru/vacancies", par).json()
+        self.request = requests.get("https://api.hh.ru/vacancies").json()
         return self.request
 
 

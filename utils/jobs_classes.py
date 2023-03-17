@@ -1,11 +1,15 @@
 class Vacancy:
-    __slots__ = ...
+    __slots__ = ('job_title', 'job_link', 'job_description', 'job_salary')
 
-    def __init__(self, *args, **kwargs):
-        pass
+    def __init__(self, job_title, job_link, job_description, job_salary):
+        self.job_title = job_title
+        self.job_link = job_link
+        self.job_description = job_description
+        self.job_salary = job_salary
+
 
     def __str__(self):
-        pass
+        return f"Название вакансии - {self.job_title}\nОписание: {self.job_description}\nЗарплата: {self.job_salary}\nСсылка на вакансию{self.job_link}"
 
 
 
@@ -24,8 +28,9 @@ class CountMixin:
 class HHVacancy(Vacancy):  # add counter mixin
     """ HeadHunter Vacancy """
 
+
     def __str__(self):
-        return f'HH: {self.comany_name}, зарплата: {self.salary} руб/мес'
+        return f'HH: {self.job_title}, зарплата: {self.job_salary} руб/мес'
 
 
 
@@ -33,7 +38,7 @@ class SJVacancy(Vacancy):  # add counter mixin
     """ SuperJob Vacancy """
 
     def __str__(self):
-        return f'SJ: {self.comany_name}, зарплата: {self.salary} руб/мес'
+        return f'SJ: {self.job_title}, зарплата: {self.job_salary} руб/мес'
 
 
 def sorting(vacancies):
